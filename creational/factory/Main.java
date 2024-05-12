@@ -1,6 +1,7 @@
 package factory;
 
 import factory.FactoryMethod.PannerBurgerFactory;
+import factory.FactoryMethod.RestaurantFM;
 import factory.FactoryMethod.VeggieBurgerFactory;
 import factory.SimpleFactory.Restaurent;
 
@@ -13,13 +14,13 @@ public class Main {
 
     static void testFactoryMethod() {
         System.out.println("Testing factory method --------------------");
-        var pannerBurgerF = new PannerBurgerFactory();
-        var pBurger = pannerBurgerF.createBurger();
+        RestaurantFM pannerBurgerF = new PannerBurgerFactory();
+        Burger pBurger = pannerBurgerF.orderBurger();
 
         pBurger.printOrder();
 
-        var vegBurgerF = new VeggieBurgerFactory();
-        var vBurger = vegBurgerF.createBurger();
+        RestaurantFM vegBurgerF = new VeggieBurgerFactory();
+        Burger vBurger = vegBurgerF.orderBurger();
 
         vBurger.printOrder();
 
